@@ -3,6 +3,7 @@ ENV["RAILS_ENV"] ||= 'test'
 require 'spec_helper'
 require File.expand_path("../../test/dummy/config/environment.rb",  __FILE__)
 require 'rspec/rails'
+require 'ruby-debug'
 
 Dir[Rails.root.join("#{Uzfields::Engine.root}/lib/*/**.rb")].each { |f| require f }
 # Requires supporting ruby files with custom matchers and macros, etc, in
