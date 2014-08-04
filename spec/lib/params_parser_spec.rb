@@ -23,7 +23,7 @@ describe ParamsParser do
   data = [    
     # validations: [ "required", "email", "unique", "no_spaces" ], 
     GeneratorDefinition.new({
-      params: "admin::person /logged 
+      command: "admin::person /logged 
         has_many:fingers:thru:person_fingers 
         has_many:properties
         has_one:head
@@ -50,8 +50,8 @@ describe ParamsParser do
     })
   ]
   data.each do |d| 
-    describe "#{d.params}\n" do
-      parser = ParamsParser.new(d.params)
+    describe "#{d.command}\n" do
+      parser = ParamsParser.new(d.command)
 
       it "model #{d.model}" do 
         parser.model.should == d.model 
@@ -68,22 +68,22 @@ describe ParamsParser do
         
       i = 0    
       d.relationships.each do |r|
-        it "#{i}) relationship #{r[:type]}:#{r[:entity]}" do
-          parser.relationships[i].type.should == r[:type] 
-          parser.relationships[i].entity.should == r[:entity] 
-          parser.relationships[i].thru.should == r[:thru]
+        it "#{i}) relationship #{r.type}:#{r.entity}" do
+          parser.relationships[i].type.should == r.type 
+          parser.relationships[i].entity.should == r.entity 
+          parser.relationships[i].thru.should == r.thru
           i += 1
         end        
       end
 
       j = 0      
       d.fields.each do |f|
-        it "#{j}) fields #{f[:name]}:#{f[:type]}" do                    
-          parser.fields[j].name.should == f[:name] 
-          parser.fields[j].type.should == f[:type] 
-          parser.fields[j].is_index.should == f[:is_index]
-          parser.fields[j].type_options.to_set.should == f[:type_options].to_set
-          parser.fields[j].validations.to_set.should == f[:validations].to_set                    
+        it "#{j}) fields #{f.name}:#{f.type}" do                          
+          parser.fields[j].name.should == f.name 
+          parser.fields[j].type.should == f.type 
+          parser.fields[j].is_index.should == f.is_index
+          parser.fields[j].type_options.to_set.should == f.type_options.to_set
+          parser.fields[j].validations.to_set.should == f.validations.to_set                    
           j += 1
         end        
       end

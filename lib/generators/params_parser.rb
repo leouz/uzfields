@@ -1,23 +1,21 @@
 class ParamsParser < GeneratorDefinition
-  RELATIONSHIP_TYPES = %w(has_many has_one belongs_to)
-  
-  # attr_accessor :model, :model_path, :controller, :controller_path, :relationships, :fields
+  RELATIONSHIP_TYPES = %w(has_many has_one belongs_to)  
   
   def initialize(params)
     @relationships = []
     @fields = []
 
-    @params = params.split(" ")
-
-    @params = @params.map{ |i| i.downcase }
+    @params = params.split(" ").map{ |i| i.downcase }
     
     @model_param = @params.first
     @params.delete_at(0)
-    @controller_param = nil
+
+    @controller_param = nil    
     if @params.first and @params.first.starts_with?('/')
       @controller_param = @params.first
       @params.delete_at(0)
     end
+
     parse_model
     parse_model_path
     parse_controller

@@ -1,3 +1,0 @@
-
-class AssumptionHandler
-end
