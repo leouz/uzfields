@@ -10,6 +10,19 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
-//= require_tree .
+// -- LIBRARIES --
+//= require jquery/dist/jquery
+//= require bootstrap
+//= require bootbox/bootbox
+//= require angular/angular
+//= require angularjs-rails-resource/angularjs-rails-resource
+//= require angular-bootstrap/ui-bootstrap-tpls
+//= require ng-file-upload/angular-file-upload
+// -- CUSTOM LIBRARIES --
+//= require ngClientSidePagination
+//= require ngClientSideSort
+// -- CUSTOM --
+//= require app
+//= require all_field_types
+//= require one_fields
+//= require one_image_fields

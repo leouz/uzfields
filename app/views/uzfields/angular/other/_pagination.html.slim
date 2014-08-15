@@ -1,0 +1,7 @@
+ul.pagination
+  li ng-class="{disabled: pagination.isFirstPage()}"
+    span.fake-link ng-click="pagination.prevPage()" &laquo;
+  li ng-repeat="pageNumber in pagination.pages()" ng-class="{active: pagination.isCurrentPage(pageNumber)}"
+    span.fake-link ng-click="pagination.toPage(pageNumber)" -[ pageNumber ]-
+  li ng-class="{disabled: pagination.isLastPage()}"
+    span.fake-link ng-click="pagination.nextPage()" &raquo;   

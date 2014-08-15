@@ -1,0 +1,84 @@
+div.container ng-controller="OneFieldsCtrl"
+  .page-header
+    .row
+      .col-md-6
+        h1 -[ modelNamePlural ]-
+      
+  accordion
+    accordion-group is-open="filterAccordionStatus"
+      accordion-heading        
+        i class="fa" ng-class="{'fa-minus-square-o': filterAccordionStatus, 'fa-plus-square-o': !filterAccordionStatus}"
+        | Filters
+      = ng_search :string_field, :string
+  .row
+    .col-md-12
+      table.table.table-striped
+        thead          
+          tr
+            = ng_th :string_field
+            = ng_th :string_field
+            = ng_th :string_field
+            = ng_th :string_field
+            th
+        tbody    
+          tr ng-repeat="item in collection | filter:search:strict | orderBy:sort.field:sort.direction | paginate:pagination"
+            td -[ item.string_field ]-
+            td -[ item.string_field ]-
+            td -[ item.string_field ]-
+            td -[ item.string_field ]-
+            td.links
+              .btn-group.pull-right
+                button.btn.btn-default.btn-sm ng-click="view(item)" View
+                button.btn.btn-default.btn-sm ng-click="edit(item)" Edit
+                button.btn.btn-danger.btn-sm ng-click="delete(item)" Delete
+  .row
+    .col-md-6
+      button.btn.btn-primary ng-click="new()" New -[ modelName ]-
+    .col-md-6
+      .pull-right
+        = ng_pagination
+
+  #formModal.modal.fade.bs-example-modal-lg aria-hidden="true" aria-labelledby="-[ formModalTitle ]-" role="dialog" tabindex="-1" 
+    .modal-dialog.modal-lg
+      .modal-content
+        .modal-header
+          button.close data-dismiss="modal" type="button" 
+            span aria-hidden="true"  &times;
+            span.sr-only Close
+          h4.modal-title -[ formModalTitle ]-
+        .modal-body
+          form.form-horizontal
+            = ng_input :string_field, :string
+        .modal-footer
+          button.btn.btn-primary data-dismiss="modal" ng-click="save(modalForm)" Save
+          button.btn.btn-default data-dismiss="modal" ng-click="cancel()" Cancel
+
+  #viewModal.modal.fade.bs-example-modal-lg aria-hidden="true" aria-labelledby="-[ viewModalTitle ]-" role="dialog" tabindex="-1" 
+    .modal-dialog.modal-lg
+      .modal-content
+        .modal-header
+          button.close data-dismiss="modal" type="button" 
+            span aria-hidden="true"  &times;
+            span.sr-only Close
+          h4.modal-title -[ formModalTitle ]-
+        .modal-body
+          form.form-horizontal
+            = ng_view :string_field, :string
+            = ng_view :string_field, :string
+            = ng_view :string_field, :string
+            = ng_view :string_field, :string
+            = ng_view :string_field, :string
+            = ng_view :string_field, :string
+            = ng_view :string_field, :string
+            = ng_view :string_field, :string
+            = ng_view :string_field, :string
+            = ng_view :string_field, :string
+            = ng_view :string_field, :string
+            = ng_view :string_field, :string
+            = ng_view :string_field, :string
+            = ng_view :string_field, :string
+            = ng_view :string_field, :string
+        .modal-footer
+          button.btn.btn-primary data-dismiss="modal" ng-click="edit(modalView)" Edit
+          button.btn.btn-default data-dismiss="modal" ng-click="cancel()" Close
+

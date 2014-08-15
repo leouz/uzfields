@@ -1,0 +1,12 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "jquery": "latest",
+    "angular": "latest",
+    "angularjs-rails-resource": "latest",
+    "bootstrap-sass": "latest",
+    "angular-bootstrap": "latest",
+    "bootbox": "latest",
+    "ng-file-upload": "latest"
+  }
+}

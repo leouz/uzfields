@@ -1,0 +1,59 @@
+div ng-controller="OneImageFieldsCtrl"
+  .page-header
+    .row
+      .col-md-6
+        h1 -[ modelNamePlural ]-
+      .col-md-6.pull-right
+        button.btn.btn-primary ng-click="new()" New -[ modelName ]-
+  .row
+    .col-md-1
+    .col-md-10     
+      .row.search-row
+        .col-md-12
+          = ng_search :image_field, :image
+      .row.pull-right
+        = ng_pagination
+      table.table.table-striped
+        thead          
+          tr
+            = ng_th :image_field
+            th
+        tbody    
+          tr ng-repeat="item in collection | filter:search:strict | orderBy:sort.field:sort.direction | paginate:pagination"
+            td -[ item.image_field ]-
+            td.links 
+              button.btn.btn-primary ng-click="view(item)" View
+              button.btn.btn-primary ng-click="edit(item)" Edit
+              button.btn.btn-danger ng-click="delete(item)" Delete
+      .row.pull-right
+        = ng_pagination
+
+  #formModal.modal.fade.bs-example-modal-lg aria-hidden="true" aria-labelledby="-[ formModalTitle ]-" role="dialog" tabindex="-1" 
+    .modal-dialog.modal-lg
+      .modal-content
+        .modal-header
+          button.close data-dismiss="modal" type="button" 
+            span aria-hidden="true"  &times;
+            span.sr-only Close
+          h4.modal-title -[ formModalTitle ]-
+        .modal-body
+          form role="form"
+            = ng_input :image_field, :image
+        .modal-footer
+          button.btn.btn-primary data-dismiss="modal" ng-click="save(modalForm)" Save
+          button.btn.btn-default data-dismiss="modal" ng-click="cancel()" Cancel
+
+  #viewModal.modal.fade.bs-example-modal-lg aria-hidden="true" aria-labelledby="-[ viewModalTitle ]-" role="dialog" tabindex="-1" 
+    .modal-dialog.modal-lg
+      .modal-content
+        .modal-header
+          button.close data-dismiss="modal" type="button" 
+            span aria-hidden="true"  &times;
+            span.sr-only Close
+          h4.modal-title -[ formModalTitle ]-
+        .modal-body          
+          = ng_view :image_field, :image
+        .modal-footer
+          button.btn.btn-primary data-dismiss="modal" ng-click="edit(modalView)" Edit
+          button.btn.btn-default data-dismiss="modal" ng-click="cancel()" Close
+

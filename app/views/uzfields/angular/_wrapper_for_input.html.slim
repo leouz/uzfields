@@ -1,0 +1,6 @@
+.form-group  
+  = label_tag options[:field], options[:label], :class => 'col-sm-2 control-label'  
+  .col-sm-10
+    = yield
+    -if options[:hint]
+      p.help-block= options[:hint]

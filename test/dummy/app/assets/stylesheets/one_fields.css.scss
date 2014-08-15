@@ -1,0 +1,22 @@
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.panel-title i {
+  margin-right: 5px;
+}
+
+.fake-link {
+  @extend a;
+  cursor: pointer;
+}
+.pagination {
+  margin: 0px;
+}
+th.sort {  
+  cursor: pointer; 
+  &:hover { text-decoration: underline; }
+}
+
+th i {
+  color: black;
+  margin-left: 5px;
+}

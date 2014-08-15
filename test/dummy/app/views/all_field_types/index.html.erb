@@ -1,0 +1,63 @@
+<h1>Listing all_field_types</h1>
+
+<table>
+  <tr>
+    <th>String</th>
+    <th>Mask</th>
+    <th>Permalink</th>
+    <th>Email</th>
+    <th>Pdf</th>
+    <th>File</th>
+    <th>Image</th>
+    <th>Password</th>
+    <th>Select</th>
+    <th>Radio</th>
+    <th>Checkbox</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Timestamp</th>
+    <th>Datetime</th>
+    <th>Currency</th>
+    <th>Float</th>
+    <th>Decimal</th>
+    <th>Integer</th>
+    <th>Text</th>
+    <th>Wysi</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @all_field_types.each do |all_field_type| %>
+  <tr>
+    <td><%= all_field_type.string_field %></td>
+    <td><%= all_field_type.mask_field %></td>
+    <td><%= all_field_type.permalink_field %></td>
+    <td><%= all_field_type.email_field %></td>
+    <td><%= all_field_type.pdf_field %></td>
+    <td><%= all_field_type.file_field %></td>
+    <td><%= all_field_type.image_field %></td>
+    <td><%= all_field_type.password_field %></td>
+    <td><%= all_field_type.select_field %></td>
+    <td><%= all_field_type.radio_field %></td>
+    <td><%= all_field_type.checkbox_field %></td>
+    <td><%= all_field_type.date_field %></td>
+    <td><%= all_field_type.time_field %></td>
+    <td><%= all_field_type.timestamp_field %></td>
+    <td><%= all_field_type.datetime_field %></td>
+    <td><%= all_field_type.currency_field %></td>
+    <td><%= all_field_type.float_field %></td>
+    <td><%= all_field_type.decimal_field %></td>
+    <td><%= all_field_type.integer_field %></td>
+    <td><%= all_field_type.text_field %></td>
+    <td><%= all_field_type.wysi_field %></td>
+    <td><%= link_to 'Show', all_field_type %></td>
+    <td><%= link_to 'Edit', edit_all_field_type_path(all_field_type) %></td>
+    <td><%= link_to 'Destroy', all_field_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New All field type', new_all_field_type_path %>

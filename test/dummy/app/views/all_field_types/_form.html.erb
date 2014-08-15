@@ -1,0 +1,101 @@
+<%= form_for(@all_field_type) do |f| %>
+  <% if @all_field_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@all_field_type.errors.count, "error") %> prohibited this all_field_type from being saved:</h2>
+
+      <ul>
+      <% @all_field_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :string_field %><br />
+    <%= f.text_field :string_field %>
+  </div>
+  <div class="field">
+    <%= f.label :mask_field %><br />
+    <%= f.text_field :mask_field %>
+  </div>
+  <div class="field">
+    <%= f.label :permalink_field %><br />
+    <%= f.text_field :permalink_field %>
+  </div>
+  <div class="field">
+    <%= f.label :email_field %><br />
+    <%= f.text_field :email_field %>
+  </div>
+  <div class="field">
+    <%= f.label :pdf_field %><br />
+    <%= f.text_field :pdf_field %>
+  </div>
+  <div class="field">
+    <%= f.label :file_field %><br />
+    <%= f.text_field :file_field %>
+  </div>
+  <div class="field">
+    <%= f.label :image_field %><br />
+    <%= f.text_field :image_field %>
+  </div>
+  <div class="field">
+    <%= f.label :password_field %><br />
+    <%= f.text_field :password_field %>
+  </div>
+  <div class="field">
+    <%= f.label :select_field %><br />
+    <%= f.text_field :select_field %>
+  </div>
+  <div class="field">
+    <%= f.label :radio_field %><br />
+    <%= f.text_field :radio_field %>
+  </div>
+  <div class="field">
+    <%= f.label :checkbox_field %><br />
+    <%= f.check_box :checkbox_field %>
+  </div>
+  <div class="field">
+    <%= f.label :date_field %><br />
+    <%= f.date_select :date_field %>
+  </div>
+  <div class="field">
+    <%= f.label :time_field %><br />
+    <%= f.time_select :time_field %>
+  </div>
+  <div class="field">
+    <%= f.label :timestamp_field %><br />
+    <%= f.datetime_select :timestamp_field %>
+  </div>
+  <div class="field">
+    <%= f.label :datetime_field %><br />
+    <%= f.datetime_select :datetime_field %>
+  </div>
+  <div class="field">
+    <%= f.label :currency_field %><br />
+    <%= f.text_field :currency_field %>
+  </div>
+  <div class="field">
+    <%= f.label :float_field %><br />
+    <%= f.text_field :float_field %>
+  </div>
+  <div class="field">
+    <%= f.label :decimal_field %><br />
+    <%= f.text_field :decimal_field %>
+  </div>
+  <div class="field">
+    <%= f.label :integer_field %><br />
+    <%= f.number_field :integer_field %>
+  </div>
+  <div class="field">
+    <%= f.label :text_field %><br />
+    <%= f.text_area :text_field %>
+  </div>
+  <div class="field">
+    <%= f.label :wysi_field %><br />
+    <%= f.text_area :wysi_field %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
