@@ -1,0 +1,2 @@
+= render layout: "#{path}/wrapper_for_input", locals: { options: options } do
+  input.form-control type="text" name="#{options[:tag_name]}" ng-model="#{options[:ng_model]}" placeholder="#{options[:placeholder] ||= ""}" mask="#{options[:mask]}" ng-change="#{options[:ng_change]}"

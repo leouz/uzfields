@@ -1,4 +1,4 @@
-@app = angular.module "uzfields", ["rails", 'ngClientSidePagination', 'ngClientSideSort', 'ui.bootstrap', 'angularFileUpload']
+@app = angular.module "uzfields", ["rails", 'ngClientSidePagination', 'ngClientSideSort', 'ngCrudControllerInjector', 'ui.bootstrap', 'ngMask', 'angularFileUpload']
 
 @app.config ($interpolateProvider) ->
   $interpolateProvider.startSymbol("-[").endSymbol("]-")

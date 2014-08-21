@@ -1,25 +1,26 @@
 module Uzfields::NgHelper 
-  PATH = "uzfields/angular"
+  PATH = "uzfields/ng"
   def get_locals field, type=:string, options={}
     options[:field] = field
     # options[:ng_model]
-    # options[:model]v
+    # options[:model]
     # options[:placeholder]
     # options[:hint]
     
-    options[:tag_name] = "one_image_field[#{field}]"
-    options[:tag_id] = "one_image_field_#{field}"
+    options[:tag_name] = "#{options[:model]}[#{field}]"
+    options[:tag_id] = "#{options[:model]}_#{field}"
     { path: PATH, options: options }
   end
 
-  def ng_input field, type=:string, options={}  
+  def ng_input model, field, type=:string, options={}  
+    options[:model] = model
     options[:ng_model] = "modalForm.#{field}"   
     render partial: "#{PATH}/input/#{type}", locals: get_locals(field, type, options)
   end
 
   def ng_view field, type=:string, options={}
     options[:ng_model] = "modalView.#{field}"
-    render partial: "#{PATH}/view/#{type}", locals: get_locals(field, type, options)
+    render partial: "#{PATH}/view/string", locals: get_locals(field, type, options)
   end
 
   def ng_search field, type=:string, options={}
@@ -29,6 +30,10 @@ module Uzfields::NgHelper
 
   def ng_th field    
     render partial: "#{PATH}/other/th", locals: { field: field }
+  end
+
+  def ng_td field, type=:string
+    render partial: "#{PATH}/td/#{type}", locals: { field: field }
   end
 
   def ng_pagination

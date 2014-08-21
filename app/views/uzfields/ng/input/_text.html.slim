@@ -1,0 +1,2 @@
+= render layout: "#{path}/wrapper_for_input", locals: { options: options } do
+  textarea.form-control type="textarea" name="#{options[:tag_name]}" ng-model="#{options[:ng_model]}" placeholder="#{options[:placeholder] ||= ""}" rows="#{options[:rows] ||= "5"}"

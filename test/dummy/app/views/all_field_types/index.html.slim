@@ -1,0 +1,80 @@
+h1 Title
+form.form-horizontal
+  = ng_input :string_field, :string
+  .row
+    h5.pull-right.well -[modalForm.string_field]-
+
+  = ng_input :password_field, :password
+  .row
+    h5.pull-right.well -[modalForm.password_field]-
+  = ng_input :mask_field, :mask, mask: "999-999-999"
+  .row
+    h5.pull-right.well -[modalForm.mask_field]-
+  = ng_input :currency_field, :currency
+  .row
+    h5.pull-right.well -[modalForm.currency_field]-
+  = ng_input :float_field, :float
+  .row
+    h5.pull-right.well -[modalForm.float_field]-
+  = ng_input :decimal_field, :decimal
+  .row
+    h5.pull-right.well -[modalForm.decimal_field]-
+  = ng_input :integer_field, :integer
+  .row
+    h5.pull-right.well -[modalForm.integer_field]-
+
+  = ng_input :url_field, :url
+  .row
+    h5.pull-right.well -[modalForm.url_field]-
+  = ng_input :permalink_field, :permalink, base_link: "teste.com/model/"  
+  .row
+    h5.pull-right.well -[modalForm.permalink_field]-
+  = ng_input :email_field, :email
+  .row
+    h5.pull-right.well -[modalForm.email_field]-
+  
+  = ng_input :pdf_field, :pdf
+  .row
+    h5.pull-right.well -[modalForm.pdf_field]-
+  = ng_input :file_field, :file
+  .row
+    h5.pull-right.well -[modalForm.file_field]-
+  = ng_input :image_field, :image
+  .row
+    h5.pull-right.well -[modalForm.image_field]-
+
+  = ng_input :select_field, :select, values: [ "test1", "test2", "test3" ]
+  .row
+    h5.pull-right.well -[modalForm.select_field]-
+  = ng_input :radio_field, :radio
+  .row
+    h5.pull-right.well -[modalForm.radio_field]-
+  = ng_input :radiogroup_field, :radiogroup, values: [ "test1", "test2", "test3" ]
+  .row
+    h5.pull-right.well -[modalForm.radiogroup_field]-
+  = ng_input :checkbox_field, :checkbox
+  .row
+    h5.pull-right.well -[modalForm.checkbox_field]-
+  = ng_input :checkboxgroup_field, :checkboxgroup, values: [ "test1", "test2", "test3" ]
+  .row
+    h5.pull-right.well -[modalForm.checkboxgroup_field]-
+
+  = ng_input :date_field, :date
+  .row
+    h5.pull-right.well -[modalForm.date_field]-
+  = ng_input :time_field, :time
+  .row
+    h5.pull-right.well -[modalForm.time_field]-
+  = ng_input :timestamp_field, :timestamp
+  .row
+    h5.pull-right.well -[modalForm.timestamp_field]-
+  = ng_input :datetime_field, :datetime
+  .row
+    h5.pull-right.well -[modalForm.datetime_field]-
+  
+  = ng_input :text_field, :text, rows: "10"
+  .row
+    h5.pull-right.well -[modalForm.text_field]-
+  = ng_input :wysi_field, :wysi
+  .row
+    h5.pull-right.well -[modalForm.wysi_field]-
