@@ -1,0 +1,5 @@
+= render layout: "#{path}/input/wrappers/without_label", locals: { options: options } do
+  .checkbox      
+    label
+      = options[:label] ||= options[:field].to_s.humanize
+      input type="checkbox" name="#{options[:tag_name]}" ng-model="#{options[:ng_model]}"

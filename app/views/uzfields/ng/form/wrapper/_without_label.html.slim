@@ -1,0 +1,7 @@
+.form-group ng-class='{"has-error": (form.#{options[:field]}.$dirty && form.#{options[:field]}.$invalid)}'
+  .col-sm-offset-2.col-sm-10
+    = yield
+  -if options[:hint]
+    p.help-block= options[:hint]
+  p.help-block ng-show="form.#{options[:field]}.$dirty && form.#{options[:field]}.$invalid"
+    span.label.label-danger ng-show="form.#{options[:field]}.$error.server"= "-[ errors.#{options[:field]} ]-"

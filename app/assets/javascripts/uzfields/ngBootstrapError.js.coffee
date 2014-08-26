@@ -16,3 +16,11 @@ angular.module("ngBootstrapError", []).directive "ngBootstrapError", ->
     # only apply the has-error class after the user leaves the text box
     inputNgEl.bind "blur", ->
       el.toggleClass "has-error", formCtrl[inputName].$invalid
+
+angular.module('serverError', []).directive 'serverError', ->
+  restrict: 'A'
+  require: '?ngModel'
+  link: (scope, element, attrs, ctrl) ->
+    element.on 'change', ->
+      scope.$apply ->
+        ctrl.$setValidity('server', true)

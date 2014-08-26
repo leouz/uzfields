@@ -1,0 +1,4 @@
+= render layout: "#{path}/form/wrapper/with_label", locals: { options: options } do
+  input.form-control type="text" name="#{options[:tag_name]}" ng-model="#{options[:ng_model]}" placeholder="#{options[:placeholder] ||= ""}"
+  p.help-block.permalink-help-block your link will be <u>#{options[:base_link] ||= "/"}-[#{options[:ng_model]}]- </u>
+  

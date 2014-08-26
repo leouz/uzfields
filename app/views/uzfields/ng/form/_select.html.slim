@@ -1,0 +1,11 @@
+= render layout: "#{path}/form/wrapper/with_label", locals: { options: options } do  
+  select.form-control  name="#{options[:tag_name]}" ng-model="#{options[:ng_model]}" ng-change="#{options[:ng_change]}" ng-options="#{options[:ng_options]}"
+    -if options[:values]
+      -options[:values].each do |v|
+        -if v.kind_of?(Array)
+          -value, label = v[0], v[1]
+        -else
+          -value, label = v, v.to_s.humanize
+        option value="#{value}"= label
+  -if options[:hint]
+    p.help-block= options[:hint]
